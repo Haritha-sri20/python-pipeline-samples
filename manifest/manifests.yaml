@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: python-app
-        image: nginx
+        image: varaprasad365/harness-app:jar-app
         ports:
         - containerPort: 80
 
