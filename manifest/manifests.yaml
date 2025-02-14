@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: python-app
-        image: varaprasad365/harness-app:jar-app
+        image: hmoka367/harness:catch-the-ball
         ports:
         - containerPort: 80
 
