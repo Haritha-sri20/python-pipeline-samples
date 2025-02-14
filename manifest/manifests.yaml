@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: python-app
-        image: hmoka367/harness:catch-the-ball
+        image: harithahari2420/python-pipeline-sample:latest
         ports:
         - containerPort: 80
 
