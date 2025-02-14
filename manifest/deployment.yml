@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: python-app-demo
+  labels:
+    app: python-app-demo
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: python-app-demo
+  template:
+    metadata:
+      labels:
+        app: python-app-demo
+    spec:
+      containers:
+      - name: python-app
+        image: harithahari2420/python-pipeline-sample:latest
+        ports:
+        - containerPort: 8080
