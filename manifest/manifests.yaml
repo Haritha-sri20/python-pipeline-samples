@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: python-app
-        image: varaprasad365/harness-app:jar-app
+        image: harithahari2420/python-pipeline-sample:latest
         ports:
         - containerPort: 8080
 
