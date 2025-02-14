@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: python-app-demo
-  # namespace: haritha-gke  # Add your desired namespace here
+  # namespace: haritha-gke  # Uncomment this line and set your desired namespace if needed
   labels:
     app: python-app-demo
 spec:
@@ -27,7 +27,7 @@ kind: Service
 metadata:
   name: python-app-service
 spec:
-  type: NodePort
+  type: LoadBalancer  # Changed to LoadBalancer
   selector:
     app: python-app-demo
   ports:
@@ -35,5 +35,3 @@ spec:
       protocol: TCP
       port: 80
       targetPort: 8080
-      nodePort: 30007
-      
