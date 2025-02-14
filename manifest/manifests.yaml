@@ -17,9 +17,9 @@ spec:
     spec:
       containers:
       - name: python-app
-        image: hmoka367/python-sample-app:latest
+        image: varaprasad365/harness-app:jar-app
         ports:
-        - containerPort: 8000
+        - containerPort: 8080
 
 ---
 apiVersion: v1
@@ -35,4 +35,4 @@ spec:
     - name: http
       protocol: TCP
       port: 80
-      targetPort: 8000
+      targetPort: 8080
