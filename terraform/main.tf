@@ -1,6 +1,6 @@
 provider "google" {
   project = "harness-project-450807"
-  zone = "europe-west1-b"
+  zone    = "europe-west1-b"
 }
 
 resource "google_container_cluster" "gke_cluster" {
@@ -9,6 +9,8 @@ resource "google_container_cluster" "gke_cluster" {
 
   remove_default_node_pool = true
   initial_node_count       = 1
+  deletion_protection      = false  # Add this line to disable deletion protection
+
   lifecycle {
     prevent_destroy = false
   }
@@ -27,8 +29,8 @@ resource "google_container_node_pool" "primary_nodes" {
       "https://www.googleapis.com/auth/cloud-platform"
     ]
   }
+
   lifecycle {
-    # Remove prevent_destroy if present
     prevent_destroy = false
-  }  
+  }
 }
